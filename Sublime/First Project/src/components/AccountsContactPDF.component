@@ -1,0 +1,95 @@
+<apex:component controller="AccountsContactPDFController" access="global">
+	<apex:attribute name="theAccountId" assignTo="{!accountId}" description="Id of account" type="String" required="true" access="global"/>
+
+
+	<head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+        	table, th, tr, td {
+        		border: 1px solid black;
+        	}
+
+        	h3 {
+        		background-color: #3c6bb7;
+        		color: #000000;
+        	}
+
+        	td, th {
+        		padding: 20px;
+        		text-align: center;
+        	}
+        </style>
+    </head>
+   
+	
+	<!-- <div class="logo" align="right">
+		<apex:image url="{!$Resource.BorginAndBurkes}" width="100px" height="100px" />
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				{!$Organization.Name}<br/>
+				{!$Organization.Street} <br/>
+				{!$Organization.City} {!$Organization.State}  <br/>
+				{!$Organization.Phone}
+			</div>
+		</div>
+	</div> -->
+
+
+
+
+	<center><h3 class="divider">Account Details</h3></center>
+	<hr/>
+
+	<div class="container" id="account">
+		<div class="row">
+			<div class="col-12-md" align="center">
+				<table>
+					<tr>
+						<th>Account Name</th>
+						<th>Type</th>
+						<th>Phone</th>
+						<th>Address</th>
+						<th>Website</th>
+					</tr>
+					<tr>
+						<td>{!account.Name}</td><br/>
+						<td>{!account.Type}</td><br/>
+						<td>{!account.Phone}</td><br/>
+						<td>{!account.ShippingStreet} {!account.ShippingCity}, {!account.ShippingState}</td><br/>
+						<td>{!account.Website}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<center><h3 class="divider">Contact Details</h3></center>
+	<hr/>
+
+	<div class="container" id="contact">
+		<div class="row">
+			<div class="col-12-md" align="center">
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Phone</th>
+						<th>Email</th>
+
+					</tr>
+					<apex:repeat value="{!Contacts}" var="contact">
+					<tr>
+						<td>{!contact.Name}</td><br/>
+						<td>{!contact.Phone}</td><br/>
+						<td>{!contact.Email}</td><br/>
+					</tr>
+					</apex:repeat>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</apex:component>

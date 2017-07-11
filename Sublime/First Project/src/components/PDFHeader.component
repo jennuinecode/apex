@@ -1,0 +1,17 @@
+<apex:component >
+	<div class="logo" align="right">
+		<apex:image url="{!$Resource.BorginAndBurkes}" width="100px" height="100px" />
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				{!$Organization.Name}<br/>
+				{!$Organization.Street} <br/>
+				{!$Organization.City} {!$Organization.State}  <br/>
+				{!$Organization.Phone}
+			</div>
+		</div>
+	</div>
+	<apex:componentBody/>
+</apex:component>

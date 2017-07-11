@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="false" standardController="Account">
+	<apex:form>
+		<apex:pageBlock title="Cuenta">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton action="{!save}" value="Save"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Informacion de La Cuenta" columns="2">
+				<apex:inputField value="{!Account.Name}" />
+				<apex:inputField value="{!Account.Type}" />
+			</apex:pageBlockSection>
+			<apex:pageBLockSection title="Informacion de Direccion" columns="1">
+				<apex:inputField value="{!Account.ShippingStreet}" required="true"/>
+				<apex:inputField value="{!Account.ShippingCity}" />
+				<apex:inputField value="{!Account.ShippingState}" />
+				<apex:inputField value="{!Account.ShippingPostalCode}" />
+				<apex:inputField value="{!Account.ShippingCountry}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Informaction del propietario">
+				<apex:outputField value="{!Account.OwnerID}"/>
+			</apex:pageBlockSection>
+			{!Account.OwnerId}
+		</apex:pageBLock>
+	</apex:form>
+</apex:page>

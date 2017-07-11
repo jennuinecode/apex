@@ -1,0 +1,105 @@
+<apex:page showHeader="true" sidebar="false" controller="AccountVF2Controller">
+
+	<apex:form>
+		<apex:pageBlock title="Cuenta">
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton action="{!save}" value="Save!"/>
+				<apex:commandButton action="{!cancel}" value="Cancel!"/>
+			</apex:pageBlockButtons>
+			
+			<apex:pageBlockSection title="Informacion de La Cuenta" columns="2">
+				<apex:inputField value="{!cuenta.Name}" />
+				<apex:inputField value="{!cuenta.Type}" />
+			</apex:pageBlockSection>
+			<apex:pageBLockSection title="Informacion de Direccion" columns="1">
+				<apex:inputField value="{!cuenta.ShippingStreet}" required="true"/>
+				<apex:inputField value="{!cuenta.ShippingCity}" />
+				<apex:inputField value="{!cuenta.ShippingState}" />
+				<apex:inputField value="{!cuenta.ShippingPostalCode}" />
+				<apex:inputField value="{!cuenta.ShippingCountry}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Informaction del propietario">
+				<apex:outputField value="{!cuenta.OwnerID}"/>
+			</apex:pageBlockSection>
+			{!cuenta.OwnerId}
+		</apex:pageBLock>
+
+		<apex:pageBlock title="Contacts">
+
+			<!-- Method #1 -->
+		<!-- 	<apex:pageBlockTable value = "{!contacts}" var = "item">
+				<apex:column>
+					<apex:facet name="header">First Name</apex:facet>
+					<apex:inputField value="{!item.FirstName}" />
+				</apex:column>
+				<apex:column value="{!item.LastName}"/>
+				<apex:column value="{!item.Title}"/>
+				<apex:column value="{!item.Email}"/>
+				<apex:column value="{!item.Phone}"/>
+				<apex:column value="{!item.Department}"/>
+				<apex:column value="{!item.Description}"/>
+			</apex:pageBlockTable> -->
+
+
+			<!-- Method #2 -->
+			<!-- <table width="100%">
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Title</th>
+					<th>Email</th>	
+					<th>Phone</th>
+					<th>Department</th>
+					<th>Description</th>
+				</tr>
+				<apex:repeat value="{!contacts}" var="item">
+				<tr>
+					<td>{!item.FirstName}</td>
+					<td>{!item.LastName}"</td>
+					<td>{!item.Title}"</td>
+					<td>{!item.Email}"</td>
+					<td>{!item.Phone}"</td>
+					<td>{!item.Department}"</td>
+					<td>{!item.Description}"</td>
+				</tr>
+				</apex:repeat>
+			</table> -->
+
+		
+			<apex:datatable value="{!contacts}" var="item" width="100%">
+				<apex:column>
+					<apex:facet name="header">First Name</apex:facet>
+					<apex:inputField value="{!item.FirstName}" required="True" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Last Name</apex:facet>
+					<apex:inputField value="{!item.LastName}" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Title</apex:facet>
+					<apex:inputField value="{!item.Title}" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Email</apex:facet>
+					<apex:inputField value="{!item.Email}" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Phone</apex:facet>
+					<apex:inputField value="{!item.Phone}" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Department</apex:facet>
+					<apex:inputField value="{!item.Department}" />
+				</apex:column>
+				<apex:column>
+					<apex:facet name="header">Description</apex:facet>
+					<apex:inputField value="{!item.Description}" />
+				</apex:column>
+			</apex:datatable>
+
+
+
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

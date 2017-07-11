@@ -1,0 +1,29 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="PDFmailerController">
+	<head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+        <style>
+        	
+        </style>
+    </head>
+
+    <apex:form>
+    	<apex:pageBlock title="PDF Mailer"><br/>
+			<apex:pageBlockButtons location="top">
+		   		<apex:commandButton value="Send PDF" action="{!mailPDF}"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+   
+<!--    <div class="container">
+   		<div class="row">
+   			<h3>PDF Mailer</h3>
+   		</div>
+   		<div class="row">
+			<button class="btn btn-primary" action="{!mailPDF}">Mail PDF</button>
+   		</div>
+   	</div> -->
+	
+</apex:page>
+
+

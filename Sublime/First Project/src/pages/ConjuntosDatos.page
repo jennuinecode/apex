@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false" controller="ConjuntosDatos">
+	<apex:repeat value="{!mapaCuentas}" var="cuenta">
+		<apex:pageBlock title="{!mapaCuentas[cuenta].Name} - {!mapaCuentas[cuenta].Type}">
+			<apex:repeat value="{!mapaCuentaOppsProductos[cuenta]}" var="oportunidad">
+				<apex:pageBlockSection title="{!mapaOportunidades[oportunidad].Name} - {!mapaOportunidades[oportunidad].Amount}" >
+					<apex:pageBlockTable value="{!mapaCuentaOppsProductos[cuenta][oportunidad]}" var="producto">
+						<apex:column value="{!producto.Product2.Name}"/>
+						<apex:column value="{!producto.Quantity}" />
+						<apex:column value="{!producto.UnitePrice}" />
+						<apex:column value="{!producto.TotalPrice}"/>
+					</apex:pageBlockTable>
+				</apex:pageBlockSection>
+			</apex:repeat>
+		</apex:pageBlock>
+	</apex:repeat>
+</apex:page>

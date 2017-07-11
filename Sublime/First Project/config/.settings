@@ -1,0 +1,17 @@
+{
+    "projectName": "First Project",
+    "username": "jennifer.cortes@hotmail.com",
+    "id": "fb779d40-6006-11e7-a4f4-cf6086b2340b",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://thejennuinelife-dev-ed.my.salesforce.com",
+    "workspace": "/Users/Jennifer/Dropbox/CIPAQ/DoItCloud/Sublime",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}
